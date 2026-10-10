@@ -91,6 +91,48 @@ nav ul li a:hover {
   margin-bottom: 20px;
 }
 
+/* OTA-ONAM RASMLARI */
+.parents-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 280px));
+  justify-content: center;
+  gap: 30px;
+}
+
+.parent-card {
+  background: #111116;
+  border: 1px solid #222;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.parent-card:hover {
+  transform: translateY(-7px);
+  border-color: #00e5ff;
+  box-shadow: 0 0 20px #00e5ff33;
+}
+
+.parent-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #00e5ff;
+}
+
+.parent-card h3 {
+  color: #00e5ff;
+  margin-top: 15px;
+}
+
+@media (max-width: 600px) {
+  .parents-container {
+    grid-template-columns: minmax(0, 280px);
+  }
+}
+
 .home-text > p:not(.hello) {
   color: #aaa;
   line-height: 1.7;
@@ -346,56 +388,88 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-.mening__guruhdoshlarim {
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
-  width: 1px;
+  align-items: center;
+  gap: 15px;
 }
-.mening__guruhdoshlarim {
+
+.carousel-window {
   width: 100%;
   overflow: hidden;
-  position: relative;
-  padding: 20px 0;
 }
 
 .carousel-track {
   display: flex;
   gap: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
+  transition: transform 0.5s ease;
 }
 
 .guruhdosh {
-  min-width: 250px;
+  min-width: calc((100% - 50px) / 3);
   background: #111116;
   border: 1px solid #222;
   border-radius: 15px;
   padding: 15px;
   text-align: center;
+  box-sizing: border-box;
   transition: 0.3s;
 }
 
 .guruhdosh:hover {
-  transform: translateY(-8px);
   border-color: #00e5ff;
+  transform: translateY(-5px);
 }
 
 .guruhdosh img {
-  width: 220px;
+  width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  margin: auto;
+  border-radius: 10px;
 }
 
 .guruhdosh h2 {
   font-size: 18px;
   margin-top: 15px;
   color: #00e5ff;
+}
+
+.carousel-btn {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: #00e5ff;
+  color: #000;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+/* Telefon uchun */
+@media (max-width: 768px) {
+  .guruhdosh {
+    min-width: 100%;
+  }
+
+  .guruhdosh img {
+    height: 300px;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    
+  }
 }

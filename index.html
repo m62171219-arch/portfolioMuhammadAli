@@ -12,7 +12,7 @@
       <nav>
         <h2 class="logo">Muhammadali<span>.</span></h2>
 
-        <ul>
+        <ul>`
           <li><a href="#home">Bosh sahifa</a></li>
           <li><a href="#about">Men haqimda</a></li>
           <li><a href="#skills">Ko‘nikmalar</a></li>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="profile">
-        <img src="./8e443050-69af-4143-a14a-f871c881d448.jpg" alt="" />
+        <img src="./fa06d492-7956-476e-84ba-53b933465e5a.jpg" alt="" />
       </div>
     </section>
 
@@ -88,56 +88,85 @@
       </div>
     </section>
 
+   
+<section id="ota-onam">
+  <h2 class="title">Mening ota-onam ❤️</h2>
+
+  <div class="parents-container">
+    <div class="parent-card">
+      <img src="./dadam.jpg" alt="Dadamning rasmi" />
+      <h3>Dadam ❤️</h3>
+      Ismlari:Laziz 39 yosh
+    </div>
+
+    <div class="parent-card">
+      <img src="./image.png" alt="Onamning rasmi" />
+      <h3>Onam ❤️</h3>
+      Ismlari:Barno 39 yosh
+    </div>
+  </div>
+</section>
+
+    
     <section>
-      <div class="mening__guruhdoshlarim">
-        <div class="carousel-track">
-          <div class="guruhdosh">
-            <img src="./1.png" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+      <h2 class="title">Mening guruhdoshlarim</h2>
 
-          <div class="guruhdosh">
-            <img src="./2.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+      <div class="carousel">
+        <button class="carousel-btn prev">❮</button>
 
-          <div class="guruhdosh">
-            <img src="./3.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+        <div class="carousel-window">
+          <div class="carousel-track">
+            <div class="guruhdosh">
+              <img src="./1.png" alt="Guruhdosh" />
+              <h2>Ilyosbek</h2>
+            </div>
 
-          <div class="guruhdosh">
-            <img src="./photo_2026-09-29_15-57-21.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+            <div class="guruhdosh">
+              <img src="./2.jpg" alt="Guruhdosh" />
+              <h2>Ozodbek</h2>
+            </div>
 
-          <div class="guruhdosh">
-            <img src="./photo_2026-09-29_15-57-49.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+            <div class="guruhdosh">
+              <img src="./3.jpg" alt="Guruhdosh" />
+              <h2>Jafar</h2>
+            </div>
 
-          <div class="guruhdosh">
-            <img src="./photo_2026-09-29_15-58-39.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+            <div class="guruhdosh">
+              <img src="./photo_2026-09-29_15-57-21.jpg" alt="Guruhdosh" />
+              <h2>$unnatbek</h2>
+            </div>
 
-          <div class="guruhdosh">
-            <img src="./photo_2026-09-29_15-59-03.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+            <div class="guruhdosh">
+              <img src="./photo_2026-09-29_15-57-49.jpg" alt="Guruhdosh" />
+              <h2>Dovud</h2>
+            </div>
 
-          <div class="guruhdosh">
-            <img src="./photo_2026-09-29_15-59-36.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
-          </div>
+            <div class="guruhdosh">
+              <img src="./photo_2026-09-29_15-58-39.jpg" alt="Guruhdosh" />
+              <h2>Botir</h2>
+            </div>
 
-          <div class="guruhdosh">
-            <img src="./photo_2026-09-29_15-59-59.jpg" alt="Guruhdosh" />
-            <h2>Guruhimiz a'zosi</h2>
+            <div class="guruhdosh">
+              <img src="./photo_2026-09-29_15-59-03.jpg" alt="Guruhdosh" />
+              <h2>Muhammadali</h2>
+            </div>
+
+            <div class="guruhdosh">
+              <img src="./photo_2026-09-29_15-59-36.jpg" alt="Guruhdosh" />
+              <h2>Shohjaxon</h2>
+            </div>
+
+            <div class="guruhdosh">
+              <img src="./photo_2026-09-29_15-59-59.jpg" alt="Guruhdosh" />
+              <h2>Husnida</h2>
+            </div>
           </div>
         </div>
+        <button class="carousel-btn next">❯</button>
+
       </div>
     </section>
+
 
     <section id="projects">
       <h2 class="title">Loyihalarim</h2>
@@ -178,5 +207,49 @@
     <footer>
       <p>© 2026 Muhammadali. Barcha huquqlar himoyalangan.</p>
     </footer>
+    <script>
+      const track = document.querySelector(".carousel-track");
+      const nextBtn = document.querySelector(".next");
+      const prevBtn = document.querySelector(".prev");
+
+      let index = 0;
+
+      function getCardWidth() {
+        const card = document.querySelector(".guruhdosh");
+        const gap = 25;
+
+        return card.offsetWidth + gap;
+      }
+
+      function nextSlide() {
+        const cards = document.querySelectorAll(".guruhdosh");
+
+        if (index < cards.length - 3) {
+          index++;
+        } else {
+          index = 0;
+        }
+
+        track.style.transform = `translateX(-${index * getCardWidth()}px)`;
+      }
+
+      function prevSlide() {
+        const cards = document.querySelectorAll(".guruhdosh");
+
+        if (index > 0) {
+          index--;
+        } else {
+          index = cards.length - 3;
+        }
+
+        track.style.transform = `translateX(-${index * getCardWidth()}px)`;
+      }
+
+      nextBtn.addEventListener("click", nextSlide);
+      prevBtn.addEventListener("click", prevSlide);
+
+      setInterval(nextSlide, 2000);
+    </script>
   </body>
 </html>
+  
