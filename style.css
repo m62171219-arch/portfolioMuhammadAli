@@ -133,6 +133,14 @@ nav ul li a:hover {
   }
 }
 
+.contact form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
 .home-text > p:not(.hello) {
   color: #aaa;
   line-height: 1.7;
