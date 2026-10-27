@@ -529,3 +529,12 @@ footer {
     font-size: 16px;
   }
 }
+.project__text{
+  text-align: center;
+}
+.project__img{
+  width: 400px;
+}
+.project{
+  background: rebeccapurple;
+}
