@@ -5,13 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Muhammadali | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
     <header>
       <nav>
         <h2 class="logo">Muhammadali<span>.</span></h2>
-
         <ul>
           <li><a href="#home">Bosh sahifa</a></li>
           <li><a href="#about">Men haqimda</a></li>
@@ -28,12 +34,10 @@
         <p class="hello">SALOM! 👋</p>
         <h1>Men <span>Muhammadali</span>man</h1>
         <h2>Web Developer</h2>
-
         <p>
           Men zamonaviy va chiroyli web saytlar yaratishga qiziqaman. Bu mening
           shaxsiy portfolio saytim.
         </p>
-
         <div class="buttons">
           <a href="#projects" class="btn">Loyihalarim</a>
           <a href="#contact" class="btn second">Bog'lanish</a>
@@ -50,12 +54,10 @@
 
     <section id="about">
       <h2 class="title">Men haqimda</h2>
-
       <div class="about-box">
         <div class="about-content">
           <div class="about-text">
             <h3>Men — Muhammadali 👨‍💻</h3>
-
             <p>
               Men web dasturlashga qiziqaman va hozirda HTML hamda CSS yordamida
               zamonaviy web saytlar yaratishni o'rganyapman. Men 307-maktabda
@@ -87,7 +89,6 @@
 
     <section id="skills">
       <h2 class="title">Mening ko'nikmalarim</h2>
-
       <div class="skills-container">
         <div class="skill">
           <h3>HTML</h3>
@@ -109,7 +110,6 @@
 
     <section id="ota-onam">
       <h2 class="title">Mening oilam ❤️</h2>
-
       <div class="parents-container">
         <div class="parent-card">
           <img src="./dadam.jpg" alt="Dadamning rasmi" />
@@ -229,7 +229,11 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img class="project__img" src="./computer.jpg" alt="" />
+            <img
+              class="project__img"
+              src="./computer.jpg"
+              alt="Kompyuter sayti"
+            />
             <div class="project__text">
               <h3>Kompyuter veb sayti</h3>
               <p>Kompyuter qismlari haqida</p>
@@ -243,7 +247,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img class="project__img" src="./watch.jpg" alt="" />
+            <img class="project__img" src="./watch.jpg" alt="MegaMart sayti" />
             <div class="project__text">
               <h3>MegaMart</h3>
               <p>Zamonaviy onlayn do'kon</p>
@@ -255,7 +259,6 @@
 
     <section id="contact">
       <h2 class="title">Men bilan bog'lanish</h2>
-
       <div class="contact-box">
         <p>📱 Telegram: <span>@Muhammadali</span></p>
         <p>📍 Uzbekistan</p>
@@ -272,29 +275,28 @@
       const track = document.querySelector(".carousel-track");
       const nextBtn = document.querySelector(".next");
       const prevBtn = document.querySelector(".prev");
+      const carouselWindow = document.querySelector(".carousel-window");
 
       let index = 0;
 
       function getCardWidth() {
         const card = document.querySelector(".guruhdosh");
-        const carouselTrack = document.querySelector(".carousel-track");
-        const styles = getComputedStyle(carouselTrack);
+        const styles = getComputedStyle(track);
         const gap = parseFloat(styles.gap) || 25;
-
         return card.getBoundingClientRect().width + gap;
       }
 
       function getVisibleCards() {
-        const carouselWindow = document.querySelector(".carousel-window");
         const card = document.querySelector(".guruhdosh");
-
         if (!card || !carouselWindow) return 1;
+
+        const gap = parseFloat(getComputedStyle(track).gap) || 25;
 
         return Math.max(
           1,
           Math.floor(
-            (carouselWindow.clientWidth + 25) /
-              (card.getBoundingClientRect().width + 25),
+            (carouselWindow.clientWidth + gap) /
+              (card.getBoundingClientRect().width + gap),
           ),
         );
       }
